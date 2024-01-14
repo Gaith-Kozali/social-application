@@ -12,7 +12,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return SafeArea(child: Scaffold(
         extendBody: true,
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: FloatingActionButton(
@@ -63,6 +63,6 @@ class HomeScreen extends StatelessWidget {
             ),
             const EditFloatButton()
           ],
-        ));
+        )));
   }
 }

@@ -12,7 +12,7 @@ class PostWidgetWithImage extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 14.h),
       child: Container(
           padding: EdgeInsets.symmetric(horizontal: 15.w).copyWith(top: 20),
-          height: 400,
+          height: 420,
           width: 400.w,
           decoration: ShapeDecoration(
             gradient: const LinearGradient(

@@ -84,13 +84,15 @@ class SearchAppBar extends StatelessWidget implements PreferredSizeWidget {
                                 Icons.search,
                                 size: 28.r,
                               )),
-                          suffixIcon: IconButton(
-                            icon: SvgPicture.asset(AppImagesPath.exitIcon,
-                                height: 28.r, width: 28.r),
-                            onPressed: () {
-                              ctrlSearch.clear();
-                            },
-                          ),
+                          suffixIcon: inSearchPage
+                              ? SizedBox()
+                              : IconButton(
+                                  icon: SvgPicture.asset(AppImagesPath.exitIcon,
+                                      height: 28.r, width: 28.r),
+                                  onPressed: () {
+                                    ctrlSearch.clear();
+                                  },
+                                ),
                           hintStyle: AppFonts().t20W400,
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10))),

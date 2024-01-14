@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:socalize_gaith_kozali/core/constants/app_colors.dart';
 import 'package:socalize_gaith_kozali/core/constants/app_theme.dart';
@@ -12,10 +13,13 @@ import 'package:socalize_gaith_kozali/features/feature_authentication/presentati
 import 'package:socalize_gaith_kozali/features/feature_home/presentation/screens/home_screen.dart';
 import 'package:socalize_gaith_kozali/features/feature_search/presentation/screens/result_screen.dart';
 import 'package:socalize_gaith_kozali/features/feature_search/presentation/screens/search_screen.dart';
+import 'package:socalize_gaith_kozali/features/feature_setting/presentation/controllers/gallery_bloc.dart';
+import 'package:socalize_gaith_kozali/features/feature_setting/presentation/screens/edit_profile_screen.dart';
+import 'package:socalize_gaith_kozali/features/feature_setting/presentation/screens/gallery/gallery_screen.dart';
 import 'package:socalize_gaith_kozali/features/feature_setting/presentation/screens/setting_screen.dart';
 import 'package:socalize_gaith_kozali/features/feature_setting/presentation/widgets/setting_container_widget.dart';
 import 'package:socalize_gaith_kozali/features/feature_splash/presentation/screens/splash_screen.dart';
-
+import 'core/services/get_images.dart';
 import 'features/feature_authentication/presentation/screens/signup_screens/create_password_screen.dart';
 import 'features/feature_authentication/presentation/screens/signup_screens/option_information_screens/add_profile_screen.dart';
 
@@ -34,10 +38,18 @@ class MyApp extends StatelessWidget {
         splitScreenMode: true,
         // Use builder only if you need to use library outside ScreenUtilInit context
         builder: (_, child) {
-          return MaterialApp(
-              debugShowCheckedModeBanner: false,
-              theme: AppTheme.darkTheme,
-              home: HomeScreen());
+          return MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                create: (context) =>
+                    GalleryBloc(GalleryService())..add(GetImageEvent()),
+              )
+            ],
+            child: MaterialApp(
+                debugShowCheckedModeBanner: false,
+                theme: AppTheme.darkTheme,
+                home: GalleryScreen()),
+          );
         });
   }
 }

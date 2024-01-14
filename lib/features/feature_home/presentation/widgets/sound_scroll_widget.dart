@@ -13,37 +13,38 @@ class SoundScrollWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
         padding: EdgeInsets.symmetric(vertical: 20.h),
-    child: SizedBox(
-        height: 51,
-        child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          itemCount: 3,
-          itemBuilder: (context, index) => Padding(
-              padding: EdgeInsets.symmetric(horizontal: 9.w),
-              child: Container(
-                width: 234.w,
-                height: 51,
-                padding: EdgeInsets.symmetric(horizontal: 14.w),
-                decoration: ShapeDecoration(
-                  gradient: LinearGradient(
-                    colors: [AppColors.lightBlack, AppColors.blue],
-                  ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(71).r,
-                  ),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    CircleAvatar(
-                        radius: 15.r,
-                        backgroundImage: AssetImage("assets/profil.png")),
-                    Text('shimaa  and 2 other', style: AppFonts().t12W600),
-                    SvgPicture.asset(AppImagesPath.sound,
-                        height: 24, width: 24.w),
-                  ],
-                ),
-              )),
-        )));
+        child: SizedBox(
+            height: 51,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              padding: EdgeInsets.only(left: 20.w),
+              itemCount: 3,
+              itemBuilder: (context, index) => Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 9.w),
+                  child: Container(
+                    width: 234.w,
+                    height: 51,
+                    padding: EdgeInsets.symmetric(horizontal: 14.w),
+                    decoration: ShapeDecoration(
+                      gradient: LinearGradient(
+                        colors: [AppColors.lightBlack, AppColors.blue],
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(71).r,
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        CircleAvatar(
+                            radius: 15.r,
+                            backgroundImage: AssetImage("assets/profil.png")),
+                        Text('shimaa  and 2 other', style: AppFonts().t12W600),
+                        SvgPicture.asset(AppImagesPath.sound,
+                            height: 24, width: 24.w),
+                      ],
+                    ),
+                  )),
+            )));
   }
 }

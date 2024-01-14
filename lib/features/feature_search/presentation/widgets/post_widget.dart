@@ -12,7 +12,7 @@ class PostWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 396.w,
-      height: 175,
+      height: 185,
       padding: EdgeInsets.symmetric(
         horizontal: 28.w,
       ).copyWith(top: 18, bottom: 14),

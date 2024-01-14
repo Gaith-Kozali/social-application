@@ -7,6 +7,8 @@ class AppColors {
   static const Color lightBlack = Color(0XFF181B26);
   static const Color blue = Color(0xFF042960);
   static const Color silver = Color(0x54D9D9D9);
+  static const Color darkWhite = Color(0xFFA09BA3);
+  static const Color red = Color(0xFFFF0000);
   static const List<Color> lightBlackBlue = [
     AppColors.lightBlack,
     AppColors.lightBlack,
