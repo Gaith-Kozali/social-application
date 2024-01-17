@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:socalize_gaith_kozali/features/feature_setting/presentation/screens/account_setting_screen.dart';
+import 'package:socalize_gaith_kozali/features/feature_setting/presentation/screens/setting/setting_screen.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_fonts.dart';
 import '../../../../core/constants/app_images_path.dart';
@@ -87,7 +87,7 @@ class HomeDrawer extends StatelessWidget {
           ),
         ),
         ListTile(
-          leading: Icon(Icons.settings_outlined, color: Colors.white),
+          leading: const Icon(Icons.settings_outlined, color: Colors.white),
           onTap: () {
             showModalBottomSheet(
               backgroundColor: AppColors.backGround,
@@ -95,7 +95,7 @@ class HomeDrawer extends StatelessWidget {
               isDismissible: true,
               useSafeArea: true,
               context: context,
-              builder: (context) => AccountSettingScreen(),
+              builder: (context) => SettingScreen(),
             );
           },
           title: Text(
@@ -104,7 +104,7 @@ class HomeDrawer extends StatelessWidget {
           ),
         ),
         ListTile(
-          leading: Icon(Icons.logout_outlined, color: Colors.white),
+          leading: const Icon(Icons.logout_outlined, color: Colors.white),
           onTap: () {},
           title: Text(
             'Logout',
@@ -120,10 +120,10 @@ class HomeDrawer extends StatelessWidget {
           ),
         ),
 
-        Padding(
-          padding: EdgeInsets.only(bottom: 41.h, left: 22.w),
-          child: const Icon(Icons.dark_mode_outlined, color: Colors.white),
-        )
+        // Padding(
+        //   padding: EdgeInsets.only(bottom: 41.h, left: 22.w),
+        //   child: const Icon(Icons.dark_mode_outlined, color: Colors.white),
+        // )
         //SizedBox(height: 200.h,),
       ]),
     );

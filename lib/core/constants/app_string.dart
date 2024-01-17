@@ -1,5 +1,7 @@
 class AppString {
   static const String appName = "SOCIALIZE";
+
+  // this string is in SettingScreen for setting inside SettingContainerWidget
   static const List<String> settingBoxNotification = [
     "Pause notifications",
     "notifications setting "
@@ -19,5 +21,17 @@ class AppString {
     "community guidelines",
     "terms of service",
     "privacy policy",
+  ];
+
+  // in this string in Resources Screen inside SettingContainerTitleWidget
+  static const List<String> settingBoxPreference = [
+    "Notifications",
+    "Appearance"
+  ];
+  static const List<String> settingBoxResource = [
+    "Contact Support",
+    "Rate in app store",
+    "Follow@Socialize",
+    "Data Sources"
   ];
 }

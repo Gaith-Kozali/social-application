@@ -43,3 +43,7 @@ double getRealWidth(BuildContext context) {
     return MediaQuery.of(context).size.width;
   }
 }
+
+double getKeyBoardHeight(BuildContext context) {
+  return MediaQuery.of(context).viewInsets.bottom;
+}

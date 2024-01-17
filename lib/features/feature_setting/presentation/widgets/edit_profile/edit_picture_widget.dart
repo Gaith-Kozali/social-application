@@ -1,14 +1,16 @@
-// welcome this codes is write by Gaith kozali
+// welcome this project is coded by Gaith kozali start in 2023/1/1
 
+import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:socalize_gaith_kozali/features/feature_setting/presentation/screens/gallery/gallery_screen.dart';
+import 'package:socalize_gaith_kozali/features/feature_setting/presentation/controllers/edit_profile_controller/edit_profile_cubit.dart';
 import '../../../../../core/constants/app_images_path.dart';
 
 class EditPictureWidget extends StatelessWidget {
-  EditPictureWidget({super.key, required this.image});
-  MemoryImage image;
+  EditPictureWidget({super.key, this.image});
+  File? image;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -16,8 +18,7 @@ class EditPictureWidget extends StatelessWidget {
       child: Center(
         child: Stack(
           children: [
-            CircleAvatar(
-                radius: 70.r, backgroundImage: MemoryImage(image.bytes)),
+            CircleAvatar(radius: 70.r, backgroundImage: FileImage(image!)),
             Positioned(
               bottom: 0,
               right: 0,
@@ -25,12 +26,11 @@ class EditPictureWidget extends StatelessWidget {
                 child: SvgPicture.asset(AppImagesPath.cameraIcon,
                     height: 48.r, width: 48.r),
                 onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => GalleryScreen(),
-                  ));
+                  BlocProvider.of<EditProfileCubit>(context)
+                      .showTypeChoosePhoto();
                 },
               ),
-            )
+            ),
           ],
         ),
       ),

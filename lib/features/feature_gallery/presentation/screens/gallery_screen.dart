@@ -4,9 +4,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:socalize_gaith_kozali/core/constants/app_colors.dart';
 import 'package:socalize_gaith_kozali/core/constants/app_decoration.dart';
 import 'package:socalize_gaith_kozali/core/constants/app_fonts.dart';
-import 'package:socalize_gaith_kozali/features/feature_setting/presentation/controllers/gallery_bloc.dart';
-import 'package:socalize_gaith_kozali/features/feature_setting/presentation/screens/gallery/edit_image_screen.dart';
-import 'package:socalize_gaith_kozali/features/feature_setting/presentation/widgets/gallery_widgets/gallery_switch_widget.dart';
+import 'package:socalize_gaith_kozali/features/feature_gallery/presentation/widgets/gallery_switch_widget.dart';
+import 'package:socalize_gaith_kozali/route/app_route.dart';
+import '../controllers/gallery_bloc.dart';
+
 
 class GalleryScreen extends StatelessWidget {
   const GalleryScreen({super.key});
@@ -22,7 +23,7 @@ class GalleryScreen extends StatelessWidget {
               if (state is GetImageState) {
                 return Column(
                   children: [
-                  GallerySwitchWidget(),
+                    const GallerySwitchWidget(),
                     SizedBox(
                       height: 20.h,
                     ),
@@ -51,12 +52,9 @@ class GalleryScreen extends StatelessWidget {
                                     image: FileImage(
                                         state.fileImage.elementAt(index)!)))),
                         onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => EditImageScreen(
-                                    image: state.fileImage.elementAt(index)!),
-                              ));
+                          // route to screen make cut zoom
+                          Navigator.pushNamed(context, AppRoute.editImageRoute,
+                              arguments: state.fileImage.elementAt(index));
                         },
                       ),
                     ))

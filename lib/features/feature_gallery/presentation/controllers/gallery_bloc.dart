@@ -1,9 +1,12 @@
 import 'dart:async';
 import 'dart:io';
+
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:photo_manager/photo_manager.dart';
-import '../../../../core/services/get_images.dart';
+
+import '../../../../core/services/gallery_service.dart';
+
 part 'gallery_event.dart';
 part 'gallery_state.dart';
 

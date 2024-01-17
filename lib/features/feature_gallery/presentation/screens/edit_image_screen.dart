@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'dart:math';
+import 'dart:typed_data';
 import 'package:custom_image_crop/custom_image_crop.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -7,11 +8,13 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:socalize_gaith_kozali/core/constants/app_colors.dart';
 import 'package:socalize_gaith_kozali/core/constants/app_fonts.dart';
 import 'package:socalize_gaith_kozali/core/constants/app_images_path.dart';
-import 'package:socalize_gaith_kozali/features/feature_setting/presentation/screens/edit_profile_screen.dart';
+import 'package:socalize_gaith_kozali/route/app_route.dart';
+import '../../../../core/functions/file_cached.dart';
 
 class EditImageScreen extends StatelessWidget {
   EditImageScreen({super.key, required this.image});
   File image;
+
   @override
   Widget build(BuildContext context) {
     CustomImageCropController controller = CustomImageCropController();
@@ -19,12 +22,7 @@ class EditImageScreen extends StatelessWidget {
       backgroundColor: AppColors.backGround,
       body: Column(
         children: [
-          // CircleAvatar(
-          //   radius: 200.r,
-          //   backgroundImage: FileImage(image),
-          //   backgroundColor: AppColors.lightBlack,
-          // ),
-          Spacer(),
+          const Spacer(),
           CircleAvatar(
               radius: 200.r,
               child: Expanded(
@@ -37,7 +35,7 @@ class EditImageScreen extends StatelessWidget {
                   forceInsideCropArea: true,
                 ),
               )),
-          Spacer(),
+          const Spacer(),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -79,13 +77,13 @@ class EditImageScreen extends StatelessWidget {
               TextButton(
                   onPressed: () async {
                     MemoryImage? data = await controller.onCropImage();
-                    File image2 = File.fromRawPath(data!.bytes);
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => EditProfileScreen(),
-                            settings: RouteSettings(
-                                arguments: data)));
+                    Uint8List bytes = data!.bytes;
+                    File tempFile = await saveImageToTempFile(bytes);
+                    Navigator.pushNamed(
+                      context,
+                      AppRoute.editProfileRoute,
+                      arguments: tempFile,
+                    );
                     print(data);
                   },
                   child: Text(

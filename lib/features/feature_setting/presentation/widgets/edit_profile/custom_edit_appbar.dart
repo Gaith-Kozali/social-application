@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import '../../../../../core/constants/app_fonts.dart';
 
 class CustomEditAppBar extends StatelessWidget {
-  const CustomEditAppBar({super.key});
-
+  CustomEditAppBar({super.key, required this.title});
+  String title;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -17,7 +17,7 @@ class CustomEditAppBar extends StatelessWidget {
               Icons.arrow_back_ios,
               color: Colors.white,
             )),
-        Text('Edit Profile', style: AppFonts().t17W700),
+        Text(title, style: AppFonts().t17W700),
         TextButton(
             onPressed: () {},
             child: Text(

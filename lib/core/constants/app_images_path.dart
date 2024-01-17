@@ -7,6 +7,7 @@ class AppImagesPath {
   static const String deleteAccountIcon = "assets/icons/delete_account.svg";
   static const String removeIcon = "assets/icons/remove.svg";
   static const String cameraIcon = "assets/icons/camera.svg";
+  static const String systemModeIcon = "assets/icons/system_mode.svg";
   // social app icons
   static const String facebookIcon = "assets/icons/social_app/facebook.svg";
   static const String linkedInIcon = "assets/icons/social_app/linkedin.svg";

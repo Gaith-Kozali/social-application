@@ -42,8 +42,12 @@ dependencies:
   flutter_bloc: ^8.1.3
   auto_size_text: ^3.0.0
   photo_manager: ^3.0.0-dev.5
-  image_cropper: ^5.0.1
   custom_image_crop: ^0.0.13
+  image_picker: ^1.0.7
+  video_player: ^2.8.2
+  camera: ^0.10.5+9
+  extended_text_field: ^13.0.1
+  path_provider: ^2.1.2
 
 dev_dependencies:
   flutter_test:
@@ -72,6 +76,8 @@ flutter:
     - assets/
     - assets/icons/
     - assets/icons/social_app/
+    - assets/video.mp4
+    - assets/video2.mp4
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:socalize_gaith_kozali/features/feature_create_post/presentation/screens/create_post_screen.dart';
+import 'package:socalize_gaith_kozali/route/app_route.dart';
 
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_images_path.dart';
@@ -24,9 +26,11 @@ class EditFloatButton extends StatelessWidget {
                   end: Alignment.topCenter),
               shape: OvalBorder(),
             ),
-            child: Icon(Icons.edit,color: Colors.white),
+            child: Icon(Icons.edit, color: Colors.white),
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).popAndPushNamed(AppRoute.createPostRoute);
+          },
         ));
   }
 }

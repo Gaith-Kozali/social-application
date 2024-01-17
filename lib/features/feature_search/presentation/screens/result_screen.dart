@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:socalize_gaith_kozali/core/constants/app_colors.dart';
-import 'package:socalize_gaith_kozali/core/constants/app_fonts.dart';
-import 'package:socalize_gaith_kozali/features/feature_search/presentation/widgets/people_widget.dart';
-import 'package:socalize_gaith_kozali/features/feature_search/presentation/widgets/post_widget.dart';
 import 'package:socalize_gaith_kozali/features/feature_search/presentation/widgets/search_appbar.dart';
 import 'package:socalize_gaith_kozali/features/feature_search/presentation/widgets/see_all_widgets/see_all_people_widget.dart';
 import 'package:socalize_gaith_kozali/features/feature_search/presentation/widgets/see_all_widgets/see_all_post_widget.dart';
-import '../../../../core/constants/app_images_path.dart';
 import '../widgets/rooms_widgets.dart';
 
 class ResultScreen extends StatelessWidget {

@@ -9,10 +9,13 @@ class AppColors {
   static const Color silver = Color(0x54D9D9D9);
   static const Color darkWhite = Color(0xFFA09BA3);
   static const Color red = Color(0xFFFF0000);
+  static const Color lightBlue = Color(0XFFCED7E5);
+  static const Color blueButton = Color(0XFF001A72);
   static const List<Color> lightBlackBlue = [
     AppColors.lightBlack,
     AppColors.lightBlack,
     AppColors.blue
   ];
   static const List<Color> bluePurple = [Color(0xFF001662), Color(0xFFDF2F6E)];
+  static const List<Color> blackBlue = [Color(0xFF1A369B), Color(0x001F2434)];
 }

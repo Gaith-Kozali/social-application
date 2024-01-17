@@ -47,4 +47,18 @@ class AppDecoration {
           borderSide: const BorderSide(
             color: AppColors.lightBlack,
           )));
+
+  InputDecoration inputDecorationCreatePost = InputDecoration(
+    fillColor: AppColors.lightBlack,
+    filled: true,
+    isDense: true,
+    enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(20).r,
+        borderSide: const BorderSide(color: AppColors.lightBlack)),
+    focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(20).r,
+        borderSide: const BorderSide(color: AppColors.lightBlack)),
+    hintText: 'Write A Caption....',
+    hintStyle: AppFonts().t14W500,
+  );
 }
