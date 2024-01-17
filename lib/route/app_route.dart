@@ -10,9 +10,9 @@ import 'package:socalize_gaith_kozali/features/feature_authentication/presentati
 import 'package:socalize_gaith_kozali/features/feature_authentication/presentation/screens/signup_screens/re_enter_screen.dart';
 import 'package:socalize_gaith_kozali/features/feature_authentication/presentation/screens/signup_screens/verification_screen.dart';
 import 'package:socalize_gaith_kozali/features/feature_create_post/presentation/screens/create_post_screen.dart';
-import 'package:socalize_gaith_kozali/features/feature_create_post/presentation/screens/open_camera_screen.dart';
 import 'package:socalize_gaith_kozali/features/feature_gallery/presentation/screens/post_gallery_screen.dart';
 import 'package:socalize_gaith_kozali/features/feature_home/presentation/screens/home_screen.dart';
+import 'package:socalize_gaith_kozali/features/feature_profile/presentation/screens/profile_screen.dart';
 import 'package:socalize_gaith_kozali/features/feature_search/presentation/screens/result_screen.dart';
 import 'package:socalize_gaith_kozali/features/feature_search/presentation/screens/search_screen.dart';
 import 'package:socalize_gaith_kozali/features/feature_gallery/presentation/screens/edit_image_screen.dart';
@@ -47,23 +47,23 @@ class AppRoute {
   static const editProfileRoute = "/EditProfile";
   static const resourcesRoute = "/Resources";
   static const createPostRoute = "/CreatePost";
-  static const openCameraRoute = "/OpenCamera";
   static const postGalleyRoute = "/PostGalley";
+  static const profileRoute = "/Profile";
 
   static Route<dynamic> screenRouteController(RouteSettings settings) {
     switch (settings.name) {
       case homeRoute:
         return MaterialPageRoute(
-          builder: (context) => HomeScreen(),
+          builder: (context) => const HomeScreen(),
         );
       // authentication route
       case splashRoute:
         return MaterialPageRoute(
-          builder: (context) => SplashScreen(),
+          builder: (context) => const SplashScreen(),
         );
       case loginRoute:
         return MaterialPageRoute(
-          builder: (context) => LoginScreen(),
+          builder: (context) => const LoginScreen(),
         );
       case addEmailRoute:
         return MaterialPageRoute(
@@ -100,7 +100,7 @@ class AppRoute {
       //routes of gallery and make cut zoom of picture
       case galleryRoute:
         return MaterialPageRoute(
-          builder: (context) => GalleryScreen(),
+          builder: (context) => const GalleryScreen(),
         );
       case editImageRoute:
         return MaterialPageRoute(
@@ -110,11 +110,11 @@ class AppRoute {
       //routes of search and result of search
       case searchRoute:
         return MaterialPageRoute(
-          builder: (context) => SearchScreen(),
+          builder: (context) => const SearchScreen(),
         );
       case resultRoute:
         return MaterialPageRoute(
-          builder: (context) => ResultScreen(),
+          builder: (context) => const ResultScreen(),
         );
       //routes of settings
       case settingRoute:
@@ -127,7 +127,7 @@ class AppRoute {
         );
       case colorSchemeRoute:
         return MaterialPageRoute(
-          builder: (context) => ColorSchemeScreen(),
+          builder: (context) => const ColorSchemeScreen(),
         );
       case editProfileRoute:
         return MaterialPageRoute(
@@ -144,17 +144,17 @@ class AppRoute {
           builder: (context) => CreatePostScreen(),
         );
 
-      // case openCameraRoute:
-      //   return MaterialPageRoute(
-      //     builder: (context) => OpenCameraScreen(),
-      //   );
       case postGalleyRoute:
         return MaterialPageRoute(
-          builder: (context) => PostGalleyScreen(),
+          builder: (context) => const PostGalleyScreen(),
+        );
+      case profileRoute:
+        return MaterialPageRoute(
+          builder: (context) => const ProfileScreen(),
         );
       default:
         return MaterialPageRoute(
-          builder: (context) => RouteErrorScreen(),
+          builder: (context) => const RouteErrorScreen(),
         );
     }
   }

@@ -3,8 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:socalize_gaith_kozali/core/constants/app_decoration.dart';
 import 'package:socalize_gaith_kozali/core/functions/screen_informations.dart';
-
-import '../../../../../core/constants/app_colors.dart';
 import '../../../../../core/constants/app_fonts.dart';
 import '../../../../../core/constants/app_images_path.dart';
 
@@ -150,3 +148,6 @@ class SocialHandlesWidget extends StatelessWidget {
     );
   }
 }
+
+
+// welcome this project is coded by Gaith kozali start in 2023/1/1

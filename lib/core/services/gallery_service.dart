@@ -7,7 +7,6 @@ import 'package:photo_manager/photo_manager.dart';
 import 'package:socalize_gaith_kozali/route/app_route.dart';
 
 class GalleryService {
-
   Future<List<AssetEntity>> getAllImage() async {
     List<AssetPathEntity> rootAlbum = [];
     List<AssetEntity> entities = [];
@@ -39,7 +38,5 @@ class GalleryService {
     video ?? File(video!.path);
   }
 
-  void openCamera(BuildContext context) async {
-  //  Navigator.of(context).pushNamed(AppRoute.openCameraRoute);
-  }
+  void openCamera(BuildContext context) async {}
 }

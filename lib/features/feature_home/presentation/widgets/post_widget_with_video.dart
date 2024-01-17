@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:socalize_gaith_kozali/features/feature_home/presentation/widgets/video_widget.dart';
-import 'package:video_player/video_player.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../feature_search/presentation/widgets/post_widget.dart';
 
@@ -44,3 +43,4 @@ class _PostWidgetWithVideoState extends State<PostWidgetWithVideo> {
     );
   }
 }
+// welcome this project is coded by Gaith kozali start in 2023/1/1

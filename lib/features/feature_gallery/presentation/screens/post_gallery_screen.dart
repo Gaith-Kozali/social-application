@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:socalize_gaith_kozali/core/constants/app_fonts.dart';
 import 'package:socalize_gaith_kozali/features/feature_gallery/presentation/widgets/post_gallery_appbar.dart';
-
 import '../../../../core/constants/app_colors.dart';
 
 class PostGalleyScreen extends StatelessWidget {
@@ -42,3 +41,4 @@ class PostGalleyScreen extends StatelessWidget {
     );
   }
 }
+// welcome this project is coded by Gaith kozali start in 2023/1/1

@@ -9,7 +9,6 @@ import 'package:socalize_gaith_kozali/features/feature_setting/presentation/widg
 import 'package:socalize_gaith_kozali/features/feature_setting/presentation/widgets/setting_widgets/profile_container.dart';
 import 'package:socalize_gaith_kozali/features/feature_setting/presentation/widgets/setting_widgets/setting_container_widget.dart';
 import 'package:socalize_gaith_kozali/features/feature_setting/setting.dart';
-
 import '../../../../../core/constants/app_colors.dart';
 
 class SettingScreen extends StatelessWidget {

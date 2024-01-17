@@ -6,7 +6,7 @@ import 'package:socalize_gaith_kozali/features/feature_authentication/presentati
 import 'package:socalize_gaith_kozali/features/feature_splash/presentation/widgets/app_name_widget.dart';
 
 import '../../../../../core/constants/app_decoration.dart';
-
+// welcome this project is coded by Gaith kozali start in 2023/1/1
 class ReEnterScreen extends StatelessWidget {
   ReEnterScreen({super.key});
   AppFonts appFonts = AppFonts();

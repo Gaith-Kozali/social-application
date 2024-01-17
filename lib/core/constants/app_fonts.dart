@@ -6,8 +6,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:socalize_gaith_kozali/core/constants/app_colors.dart';
 
 class AppFonts {
-
-
   TextStyle t18W500 = TextStyle(
     color: Colors.white,
     fontSize: 18.spMin,
@@ -71,6 +69,13 @@ class AppFonts {
     fontSize: 16.spMin,
     fontFamily: 'SF Pro Display',
     fontWeight: FontWeight.w400,
+    letterSpacing: 0.38,
+  );
+  TextStyle t16W500 = TextStyle(
+    color: Colors.white,
+    fontSize: 16.spMin,
+    fontFamily: 'SF Pro Display',
+    fontWeight: FontWeight.w500,
     letterSpacing: 0.38,
   );
 
