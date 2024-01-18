@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:socalize_gaith_kozali/core/constants/app_fonts.dart';
 import 'package:socalize_gaith_kozali/core/functions/screen_informations.dart';
+import 'package:socalize_gaith_kozali/core/services/gallery_service.dart';
+import 'package:socalize_gaith_kozali/route/app_route.dart';
 import '../../../feature_splash/presentation/widgets/splash_button.dart';
 
 class ChooseImageWidget extends StatelessWidget {
@@ -32,12 +34,15 @@ class ChooseImageWidget extends StatelessWidget {
             Padding(
                 padding: EdgeInsets.only(top: 50.h, bottom: 16.h),
                 child: SplashButton(
-                  title: "Choose from Camera Roll",
-                  func: () {},
-                )),
+                    title: "Choose from Camera Roll",
+                    func: () {
+                      // Navigator.of(context).pushNamed(AppRoute.galleryRoute)
+                    })),
             SplashButton(
               title: "Take Photo",
-              func: () {},
+              func: () {
+                GalleryService.takePhoto().then((value) {});
+              },
             )
           ]),
         ));

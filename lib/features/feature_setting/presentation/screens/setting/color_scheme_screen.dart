@@ -12,8 +12,7 @@ class ColorSchemeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: SizedBox(
+    return  SizedBox(
             height: getFullScreenHeight(context) * 0.9,
             child: Padding(
               padding:
@@ -53,6 +52,6 @@ class ColorSchemeScreen extends StatelessWidget {
                   ],
                 )
               ]),
-            )));
+            ));
   }
 }

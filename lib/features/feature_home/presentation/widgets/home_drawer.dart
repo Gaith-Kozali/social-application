@@ -72,15 +72,19 @@ class HomeDrawer extends StatelessWidget {
           height: 50.h,
         ),
         ListTile(
-          leading: const Icon(Icons.account_circle_outlined, color: Colors.white),
-          onTap: () =>Navigator.pushNamed(context, AppRoute.profileRoute),
+          leading:
+              const Icon(Icons.account_circle_outlined, color: Colors.white),
+          onTap: () {
+            Navigator.pushNamed(context, AppRoute.profileRoute);
+            Scaffold.of(context).closeDrawer();
+          },
           title: Text(
             'Profile',
             style: AppFonts().t17W600.copyWith(color: Colors.white),
           ),
         ),
         ListTile(
-          leading: Icon(Icons.mic_none_outlined, color: Colors.white),
+          leading: const Icon(Icons.mic_none_outlined, color: Colors.white),
           onTap: () {},
           title: Text(
             'Spaces',
@@ -98,6 +102,7 @@ class HomeDrawer extends StatelessWidget {
               context: context,
               builder: (context) => SettingScreen(),
             );
+            Scaffold.of(context).closeDrawer();
           },
           title: Text(
             'Settings',

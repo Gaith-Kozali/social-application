@@ -4,6 +4,7 @@ import 'package:socalize_gaith_kozali/core/constants/app_fonts.dart';
 import 'package:socalize_gaith_kozali/core/functions/screen_informations.dart';
 import 'package:socalize_gaith_kozali/features/feature_authentication/presentation/widgets/auth_button.dart';
 import 'package:socalize_gaith_kozali/features/feature_splash/presentation/widgets/app_name_widget.dart';
+import 'package:socalize_gaith_kozali/route/app_route.dart';
 import '../../../../../core/constants/app_decoration.dart';
 
 class AddPhoneScreen extends StatelessWidget {
@@ -45,6 +46,7 @@ class AddPhoneScreen extends StatelessWidget {
                       height: 68.h,
                       child: TextFormField(
                         controller: ctrlPhone,
+                        style: AppFonts().t18W500,
                         keyboardType: TextInputType.phone,
                         decoration: AppDecoration()
                             .inputDecoration1
@@ -60,7 +62,7 @@ class AddPhoneScreen extends StatelessWidget {
                     ),
                     AuthButton(
                       title: "Next",
-                      func: () {},
+                      func: () => Navigator.of(context).pushNamed(AppRoute.verificationRoute),
                     ),
                     Center(
                       child: TextButton(

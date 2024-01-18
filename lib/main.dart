@@ -4,9 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:socalize_gaith_kozali/core/constants/app_theme.dart';
+import 'package:socalize_gaith_kozali/features/feature_gallery/presentation/screens/gallery_screen.dart';
 import 'package:socalize_gaith_kozali/features/feature_home/presentation/screens/home_screen.dart';
 import 'package:socalize_gaith_kozali/features/feature_profile/presentation/screens/profile_screen.dart';
 import 'package:socalize_gaith_kozali/features/feature_setting/presentation/controllers/edit_profile_controller/edit_profile_cubit.dart';
+import 'package:socalize_gaith_kozali/features/feature_setting/presentation/screens/edit_profile_screen.dart';
+import 'package:socalize_gaith_kozali/features/feature_splash/presentation/screens/splash_screen.dart';
 import 'package:socalize_gaith_kozali/route/app_route.dart';
 import 'core/services/gallery_service.dart';
 import 'features/feature_gallery/presentation/controllers/gallery_bloc.dart';
@@ -39,7 +42,7 @@ class MyApp extends StatelessWidget {
                 debugShowCheckedModeBanner: false,
                 theme: AppTheme.darkTheme,
                 onGenerateRoute: AppRoute.screenRouteController,
-                home: ProfileScreen()),
+                home: SplashScreen()),
           );
         });
   }

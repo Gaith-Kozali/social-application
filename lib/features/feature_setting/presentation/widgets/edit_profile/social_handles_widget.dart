@@ -33,6 +33,7 @@ class SocialHandlesWidget extends StatelessWidget {
                 width: 205.w,
                 height: 40,
                 child: TextFormField(
+                    style: AppFonts().t18W500,
                     decoration: appDecoration.inputDecorationEditPage),
               )
             ],
@@ -54,6 +55,7 @@ class SocialHandlesWidget extends StatelessWidget {
                 width: 205.w,
                 height: 40,
                 child: TextFormField(
+                    style: AppFonts().t18W500,
                     decoration: appDecoration.inputDecorationEditPage),
               )
             ],
@@ -75,6 +77,7 @@ class SocialHandlesWidget extends StatelessWidget {
                 width: 205.w,
                 height: 40,
                 child: TextFormField(
+                    style: AppFonts().t18W500,
                     decoration: appDecoration.inputDecorationEditPage),
               )
             ],
@@ -99,6 +102,7 @@ class SocialHandlesWidget extends StatelessWidget {
                 width: 205.w,
                 height: 40,
                 child: TextFormField(
+                    style: AppFonts().t18W500,
                     decoration: appDecoration.inputDecorationEditPage),
               )
             ],
@@ -120,6 +124,7 @@ class SocialHandlesWidget extends StatelessWidget {
                 width: 205.w,
                 height: 40,
                 child: TextFormField(
+                    style: AppFonts().t18W500,
                     decoration: appDecoration.inputDecorationEditPage),
               )
             ],
@@ -139,6 +144,7 @@ class SocialHandlesWidget extends StatelessWidget {
                 width: 205.w,
                 height: 40,
                 child: TextFormField(
+                    style: AppFonts().t18W500,
                     decoration: appDecoration.inputDecorationEditPage),
               )
             ],
@@ -148,6 +154,5 @@ class SocialHandlesWidget extends StatelessWidget {
     );
   }
 }
-
 
 // welcome this project is coded by Gaith kozali start in 2023/1/1

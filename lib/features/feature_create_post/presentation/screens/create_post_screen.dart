@@ -11,8 +11,8 @@ import 'package:socalize_gaith_kozali/route/app_route.dart';
 
 class CreatePostScreen extends StatelessWidget {
   CreatePostScreen({super.key});
-  bool addMedia = true;
-  TextEditingController ctrlPost = TextEditingController(text: "dsfhdj");
+  bool addMedia = false;
+  TextEditingController ctrlPost = TextEditingController();
   @override
   Widget build(BuildContext context) {
     // to make this to remove homeScreen from stack of route to called disposed function in video_widget
@@ -39,10 +39,11 @@ class CreatePostScreen extends StatelessWidget {
                   addMedia
                       ? TextFormField(
                           controller: ctrlPost,
+                          maxLines: null,
+                          style: AppFonts().t14W500,
                           decoration: const InputDecoration(
                             border: InputBorder.none,
                           ),
-
                         )
                       : TextFormField(
                           controller: ctrlPost,

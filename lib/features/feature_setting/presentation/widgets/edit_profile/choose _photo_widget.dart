@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:socalize_gaith_kozali/core/constants/app_colors.dart';
@@ -21,7 +23,12 @@ class ChoosePhotoWidget extends StatelessWidget {
       Icon(Icons.camera_enhance_outlined, color: Color(0XFFA09BA3)),
       Icon(Icons.photo_library_outlined, color: Color(0XFFA09BA3))
     ], func: [
-      GalleryService().takePhoto,
+      () {
+        GalleryService.takePhoto().then((image) {
+          Navigator.of(context)
+              .pushNamed(AppRoute.editProfileRoute, arguments: image);
+        });
+      },
       () => Navigator.pushNamed(context, AppRoute.galleryRoute)
     ]);
   }

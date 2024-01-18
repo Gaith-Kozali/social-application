@@ -54,6 +54,7 @@ class EditProfileScreen extends StatelessWidget {
                                   width: 205.w,
                                   height: 40,
                                   child: TextFormField(
+                                      style: AppFonts().t18W500,
                                       decoration: appDecoration
                                           .inputDecorationEditPage),
                                 )
@@ -76,6 +77,7 @@ class EditProfileScreen extends StatelessWidget {
                                 child: SizedBox(
                                   width: 396.w,
                                   child: TextFormField(
+                                      style: AppFonts().t18W500,
                                       decoration:
                                           appDecoration.inputDecorationEditPage,
                                       maxLines: 2),

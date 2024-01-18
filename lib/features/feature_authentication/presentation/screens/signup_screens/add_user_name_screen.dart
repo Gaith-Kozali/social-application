@@ -4,7 +4,9 @@ import 'package:socalize_gaith_kozali/core/constants/app_fonts.dart';
 import 'package:socalize_gaith_kozali/core/functions/screen_informations.dart';
 import 'package:socalize_gaith_kozali/features/feature_authentication/presentation/widgets/auth_button.dart';
 import 'package:socalize_gaith_kozali/features/feature_splash/presentation/widgets/app_name_widget.dart';
+import 'package:socalize_gaith_kozali/route/app_route.dart';
 import '../../../../../core/constants/app_decoration.dart';
+
 // welcome this project is coded by Gaith kozali start in 2023/1/1
 class AddUserNameScreen extends StatelessWidget {
   AddUserNameScreen({super.key});
@@ -27,7 +29,7 @@ class AddUserNameScreen extends StatelessWidget {
                     SizedBox(
                       height: height / 8,
                     ),
-                     AppNameWidget(),
+                    AppNameWidget(),
                     Padding(
                         padding: EdgeInsets.only(
                           top: 32.h,
@@ -45,13 +47,16 @@ class AddUserNameScreen extends StatelessWidget {
                       height: 68.h,
                       child: TextFormField(
                         controller: ctrlUserName,
-                        decoration: AppDecoration().inputDecoration1.copyWith(
-                            hintText: "user name"),
+                        style: AppFonts().t18W500,
+                        decoration: AppDecoration()
+                            .inputDecoration1
+                            .copyWith(hintText: "user name"),
                       ),
                     ),
                     AuthButton(
                       title: "Next",
-                      func: () {},
+                      func: () =>
+                          Navigator.of(context).pushNamed(AppRoute.addPhoneRoute),
                     ),
                     SizedBox(
                       height: height / 3,

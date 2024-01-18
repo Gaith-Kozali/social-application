@@ -7,9 +7,10 @@ import 'package:socalize_gaith_kozali/core/functions/screen_informations.dart';
 import 'package:socalize_gaith_kozali/features/feature_authentication/presentation/widgets/auth_button.dart';
 import 'package:socalize_gaith_kozali/features/feature_authentication/presentation/widgets/choose_image_widget.dart';
 import 'package:socalize_gaith_kozali/features/feature_splash/presentation/widgets/splash_button.dart';
+import 'package:socalize_gaith_kozali/route/app_route.dart';
 
-class AppProfileScreen extends StatelessWidget {
-  AppProfileScreen({super.key});
+class AddProfileScreen extends StatelessWidget {
+  AddProfileScreen({super.key});
   AppFonts appFonts = AppFonts();
   @override
   Widget build(BuildContext context) {
@@ -18,11 +19,10 @@ class AppProfileScreen extends StatelessWidget {
         padding: EdgeInsets.symmetric(
           horizontal: 16.w,
         ),
-        child: Center(
-            child: SizedBox(
+        child: SizedBox(
           height: getScreenHeight(context),
           child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 40.h),
+              padding: EdgeInsets.symmetric(vertical: 60.h),
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -42,28 +42,19 @@ class AppProfileScreen extends StatelessWidget {
                             height: 181.r, width: 181.r)),
                     const Spacer(),
                     AuthButton(
-                      title: "Add picture",
-                      func: () {
-                        showModalBottomSheet(
-                          backgroundColor: const Color(0XFF181B26),
-                          isScrollControlled: true,
-                          isDismissible: false,
-                          enableDrag: false,
-                          useSafeArea: true,
-                          context: context,
-                          builder: (context) => const ChooseImageWidget(),
-                        );
-                      },
-                    ),
+                        title: "Add picture",
+                        func: () => AppRoute.buttonSheetNavigator(
+                            context, const ChooseImageWidget())),
                     SizedBox(
                       height: 16.h,
                     ),
                     SplashButton(
                       title: "Skip",
-                      func: () {},
+                      func: () => Navigator.of(context).pushNamedAndRemoveUntil(
+                          AppRoute.searchRoute, (route) => false),
                     )
                   ])),
-        )),
+        ),
       ),
     );
   }

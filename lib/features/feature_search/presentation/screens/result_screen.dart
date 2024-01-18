@@ -4,7 +4,7 @@ import 'package:socalize_gaith_kozali/core/constants/app_colors.dart';
 import 'package:socalize_gaith_kozali/features/feature_search/presentation/widgets/search_appbar.dart';
 import 'package:socalize_gaith_kozali/features/feature_search/presentation/widgets/see_all_widgets/see_all_people_widget.dart';
 import 'package:socalize_gaith_kozali/features/feature_search/presentation/widgets/see_all_widgets/see_all_post_widget.dart';
-import '../widgets/rooms_widgets.dart';
+import 'package:socalize_gaith_kozali/route/app_route.dart';
 
 class ResultScreen extends StatelessWidget {
   const ResultScreen({super.key});
@@ -16,7 +16,9 @@ class ResultScreen extends StatelessWidget {
         child: Scaffold(
           appBar: SearchAppBar(),
           floatingActionButton: FloatingActionButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed(AppRoute.homeRoute);
+              },
               backgroundColor: AppColors.lightYellow,
               shape: const CircleBorder(),
               child: const Icon(Icons.home_rounded)),
@@ -25,21 +27,25 @@ class ResultScreen extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
               itemCount: 1,
               itemBuilder: (context, index) {
-                return Column(
+                return const Column(
                   children: [
-                  Padding(padding: EdgeInsets.only(bottom: 10),child:SeeAllPeopleWidgets() ),
-                    Padding(padding: EdgeInsets.only(bottom: 10),child: SeeAllPostWidget() ),
-                    Padding(padding: EdgeInsets.only(bottom: 10),child: RoomsWidget() ),
-
-
+                    Padding(
+                        padding: EdgeInsets.only(bottom: 10),
+                        child: SeeAllPeopleWidgets()),
+                    Padding(
+                        padding: EdgeInsets.only(bottom: 10),
+                        child: SeeAllPostWidget()),
+                    // Padding(
+                    //     padding: EdgeInsets.only(bottom: 10),
+                    //     child: RoomsWidget()),
                   ],
                 );
               },
             ),
-            SizedBox(),
-            SizedBox(),
-            SizedBox(),
-            SizedBox(),
+            const SizedBox(),
+            const SizedBox(),
+            const SizedBox(),
+            const SizedBox(),
           ]),
         ));
   }

@@ -15,6 +15,7 @@ class AppDecoration {
     fillColor: AppColors.lightBlack,
     filled: true,
     isDense: true,
+    contentPadding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 12.w),
     enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(20).r,
         borderSide: const BorderSide(color: AppColors.lightBlack)),
@@ -24,7 +25,7 @@ class AppDecoration {
   );
 
   InputDecoration inputDecorationGallery = InputDecoration(
-      contentPadding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 0),
+      contentPadding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 12.w),
       filled: true,
       isDense: true,
       fillColor: AppColors.lightBlack,

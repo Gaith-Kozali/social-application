@@ -5,6 +5,7 @@ import 'package:socalize_gaith_kozali/core/functions/screen_informations.dart';
 import 'package:socalize_gaith_kozali/features/feature_authentication/presentation/widgets/auth_button.dart';
 import 'package:socalize_gaith_kozali/features/feature_splash/presentation/widgets/app_name_widget.dart';
 import 'package:socalize_gaith_kozali/features/feature_splash/presentation/widgets/splash_button.dart';
+import 'package:socalize_gaith_kozali/route/app_route.dart';
 
 import '../../../../../core/constants/app_decoration.dart';
 
@@ -29,7 +30,7 @@ class VerificationScreen extends StatelessWidget {
                     SizedBox(
                       height: height / 8,
                     ),
-                     AppNameWidget(),
+                    AppNameWidget(),
                     Padding(
                         padding: EdgeInsets.only(
                           top: 32.h,
@@ -48,6 +49,7 @@ class VerificationScreen extends StatelessWidget {
                       child: TextFormField(
                         controller: ctrlCode,
                         keyboardType: TextInputType.phone,
+                        style: AppFonts().t18W500,
                         decoration: AppDecoration()
                             .inputDecoration1
                             .copyWith(hintText: "confirmation code"),
@@ -58,7 +60,9 @@ class VerificationScreen extends StatelessWidget {
                     ),
                     AuthButton(
                       title: "Next",
-                      func: () {},
+                      func: () => Navigator.of(context).pushNamed(
+                        AppRoute.addProfileRoute,
+                      ),
                     ),
                     SplashButton(
                       title: "I didn’t get the code",

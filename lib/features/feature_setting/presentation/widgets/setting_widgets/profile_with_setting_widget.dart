@@ -4,6 +4,7 @@ import 'package:socalize_gaith_kozali/features/feature_setting/presentation/scre
 import 'package:socalize_gaith_kozali/features/feature_setting/presentation/screens/edit_profile_screen.dart';
 import '../../../../../core/constants/app_colors.dart';
 import '../../../../../core/constants/app_fonts.dart';
+import '../../../../../route/app_route.dart';
 import 'profile_container.dart';
 
 class ProfileWithSettingWidget extends StatelessWidget {
@@ -18,16 +19,8 @@ class ProfileWithSettingWidget extends StatelessWidget {
       child: Column(
         children: [
           ProfileContainer(
-            func: () {
-              showModalBottomSheet(
-                backgroundColor: AppColors.backGround,
-                isScrollControlled: true,
-                isDismissible: true,
-                useSafeArea: true,
-                context: context,
-                builder: (context) => EditProfileScreen(),
-              );
-            },
+            func: () =>
+                AppRoute.buttonSheetNavigator(context, EditProfileScreen()),
           ),
           ListTile(
             title: Text(
@@ -39,16 +32,8 @@ class ProfileWithSettingWidget extends StatelessWidget {
               Icons.arrow_forward_ios_outlined,
               color: Colors.white,
             ),
-            onTap: () {
-              showModalBottomSheet(
-                backgroundColor: AppColors.backGround,
-                isScrollControlled: true,
-                isDismissible: true,
-                useSafeArea: true,
-                context: context,
-                builder: (context) => AccountSettingScreen(),
-              );
-            },
+            onTap: () =>
+                AppRoute.buttonSheetNavigator(context, AccountSettingScreen()),
           )
         ],
       ),

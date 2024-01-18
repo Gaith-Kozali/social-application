@@ -6,7 +6,7 @@ class AppTheme {
   static ThemeData darkTheme = ThemeData(
       colorScheme: ColorScheme.fromSeed(
           background: AppColors.backGround, seedColor: AppColors.lightYellow),
-      iconTheme: IconThemeData(color: AppColors.lightYellow),
-      bottomSheetTheme: BottomSheetThemeData(
-          backgroundColor: Colors.transparent, shape: InputBorder.none));
+      iconTheme: const IconThemeData(color: AppColors.lightYellow),
+      bottomSheetTheme: const BottomSheetThemeData(
+          backgroundColor: Colors.transparent, shape: InputBorder.none),);
 }

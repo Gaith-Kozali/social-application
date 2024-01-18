@@ -5,6 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:socalize_gaith_kozali/core/constants/app_colors.dart';
 import 'package:socalize_gaith_kozali/features/feature_search/presentation/controllers/search_cubit.dart';
 import 'package:socalize_gaith_kozali/features/feature_search/presentation/screens/search_screen.dart';
+import 'package:socalize_gaith_kozali/route/app_route.dart';
 import '../../../../core/constants/app_fonts.dart';
 import '../../../../core/constants/app_images_path.dart';
 
@@ -62,9 +63,8 @@ class SearchAppBar extends StatelessWidget implements PreferredSizeWidget {
                       style: AppFonts().t17W400,
                       onTap: () {
                         !inSearchPage
-                            ? Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => const SearchScreen(),
-                              ))
+                            ? Navigator.of(context)
+                                .pushNamed(AppRoute.searchRoute)
                             : null;
                       },
                       onChanged: (value) {
@@ -73,7 +73,7 @@ class SearchAppBar extends StatelessWidget implements PreferredSizeWidget {
                       },
                       decoration: InputDecoration(
                           contentPadding: EdgeInsets.symmetric(
-                              vertical: 8.h, horizontal: 0),
+                              vertical: 0, horizontal: 12.w),
                           filled: true,
                           isDense: true,
                           fillColor: Color(0XFF181B26),
@@ -117,53 +117,3 @@ class SearchAppBar extends StatelessWidget implements PreferredSizeWidget {
   Size get preferredSize =>
       Size.fromHeight(inSearchPage ? kToolbarHeight : kToolbarHeight + 90);
 }
-
-// AppBar(
-// backgroundColor: Colors.transparent,
-// elevation: 0,
-// flexibleSpace: FlexibleSpaceBar(
-// background: Row(
-// crossAxisAlignment: CrossAxisAlignment.end,
-// mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-// children: [
-// IconButton(
-// onPressed: () {},
-// icon: Icon(
-// Icons.arrow_back_ios,
-// size: 24.r,
-// )),
-// SizedBox(
-// width: 356.w,
-// height: 40,
-// child: TextFormField(
-// controller: ctrlSearch,
-// style: AppFonts().t17W400,
-// onChanged: (value) {
-// BlocProvider.of<SearchCubit>(context)
-//     .suggestionFunc(value, information);
-// },
-// decoration: InputDecoration(
-// contentPadding:
-// EdgeInsets.symmetric(vertical: 8.h, horizontal: 0),
-// filled: true,
-// isDense: true,
-// fillColor: Color(0XFF181B26),
-// hintText: "Search",
-// prefixIcon: IconButton(
-// onPressed: () {},
-// icon: Icon(
-// Icons.search,
-// size: 28.r,
-// )),
-// suffixIcon: IconButton(
-// icon: SvgPicture.asset(AppImagesPath.exitIcon,
-// height: 28.r, width: 28.r),
-// onPressed: () {},
-// ),
-// hintStyle: AppFonts().t20W400,
-// border: OutlineInputBorder(
-// borderRadius: BorderRadius.circular(10))),
-// ),
-// )
-// ]),
-// ));

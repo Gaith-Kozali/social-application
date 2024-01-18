@@ -25,8 +25,10 @@ import 'package:socalize_gaith_kozali/features/feature_setting/presentation/scre
 import 'package:socalize_gaith_kozali/features/feature_splash/presentation/screens/splash_screen.dart';
 import 'package:socalize_gaith_kozali/route/route_error_screen.dart';
 
+import '../core/constants/app_colors.dart';
+
 class AppRoute {
-  static const homeRoute = "/";
+  static const homeRoute = "/Home";
   static const splashRoute = "/Splash";
   static const loginRoute = "/Login";
   static const addEmailRoute = "/AddEmail";
@@ -36,7 +38,7 @@ class AppRoute {
   static const addUserNameRoute = "/AddUserName";
   static const addPhoneRoute = "/AddPhone";
   static const addBirthRoute = "/AddBirthDay";
-  static const appProfileRoute = "/AppProfile";
+  static const addProfileRoute = "/AddProfile";
   static const galleryRoute = "/Gallery";
   static const editImageRoute = "/EditImage";
   static const searchRoute = "/Search";
@@ -93,9 +95,9 @@ class AppRoute {
         return MaterialPageRoute(
           builder: (context) => AddBirthDayScreen(),
         );
-      case appProfileRoute:
+      case addProfileRoute:
         return MaterialPageRoute(
-          builder: (context) => AppProfileScreen(),
+          builder: (context) => AddProfileScreen(),
         );
       //routes of gallery and make cut zoom of picture
       case galleryRoute:
@@ -157,5 +159,16 @@ class AppRoute {
           builder: (context) => const RouteErrorScreen(),
         );
     }
+  }
+
+  static void buttonSheetNavigator(BuildContext context, Widget screen) {
+    showModalBottomSheet(
+      backgroundColor: AppColors.backGround,
+      isScrollControlled: true,
+      isDismissible: true,
+      useSafeArea: true,
+      context: context,
+      builder: (context) => screen,
+    );
   }
 }

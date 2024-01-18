@@ -1,10 +1,8 @@
 import 'dart:io';
-import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:photo_manager/photo_manager.dart';
-import 'package:socalize_gaith_kozali/route/app_route.dart';
 
 class GalleryService {
   Future<List<AssetEntity>> getAllImage() async {
@@ -26,16 +24,20 @@ class GalleryService {
     return entities;
   }
 
-  void takePhoto() async {
+  static Future<File?> takePhoto() async {
     final ImagePicker picker = ImagePicker();
-    final XFile? photo = await picker.pickImage(source: ImageSource.camera);
-    photo ?? File(photo!.path);
+    File? photo = await picker
+        .pickImage(source: ImageSource.camera)
+        .then((value) => value != null ? File(value.path) : null);
+    return photo;
   }
 
-  void takeVideo() async {
+  static Future<File?> takeVideo() async {
     final ImagePicker picker = ImagePicker();
-    final XFile? video = await picker.pickVideo(source: ImageSource.camera);
-    video ?? File(video!.path);
+    File? video = await picker
+        .pickVideo(source: ImageSource.camera)
+        .then((value) => value != null ? File(value.path) : null);
+    return video;
   }
 
   void openCamera(BuildContext context) async {}
