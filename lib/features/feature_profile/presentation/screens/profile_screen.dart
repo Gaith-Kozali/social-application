@@ -42,10 +42,10 @@ class ProfileScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            'Activites',
+                            'Activities',
                             style: AppFonts().t18W500,
                           ),
-                          CreatePostButton()
+                          const CreatePostButton()
                         ],
                       ),
                     const PostWidgetWithVideo()
@@ -58,3 +58,5 @@ class ProfileScreen extends StatelessWidget {
     ));
   }
 }
+
+// welcome this project is coded by Gaith kozali start in 2023/1/1

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:socalize_gaith_kozali/features/feature_setting/presentation/screens/setting/setting_screen.dart';
+import 'package:socalize_gaith_kozali/route/app_route.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_fonts.dart';
 import '../../../../core/constants/app_images_path.dart';
@@ -71,8 +72,8 @@ class HomeDrawer extends StatelessWidget {
           height: 50.h,
         ),
         ListTile(
-          leading: Icon(Icons.account_circle_outlined, color: Colors.white),
-          onTap: () {},
+          leading: const Icon(Icons.account_circle_outlined, color: Colors.white),
+          onTap: () =>Navigator.pushNamed(context, AppRoute.profileRoute),
           title: Text(
             'Profile',
             style: AppFonts().t17W600.copyWith(color: Colors.white),

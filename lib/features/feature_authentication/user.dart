@@ -8,12 +8,22 @@ class User {
       required this.phone,
       required this.birthDate,
       required this.confirmationCode,
-      required this.picture});
+      this.picture,
+      this.backGroundPicture,
+      this.job,
+      this.bio,
+      required this.connects,
+      required this.followers});
   String email;
   String password;
   String name;
   String phone;
   DateTime birthDate;
-  File picture;
   String confirmationCode;
+  File? picture;
+  File? backGroundPicture;
+  String? job;
+  String? bio;
+  String followers;
+  String connects;
 }

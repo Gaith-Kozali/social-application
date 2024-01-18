@@ -24,7 +24,7 @@ class HomeScreen extends StatelessWidget {
                 backgroundColor: AppColors.lightYellow,
                 shape: const CircleBorder(),
                 child: const Icon(Icons.home_rounded)),
-            bottomNavigationBar: BottomNavigationHome(),
+            bottomNavigationBar: const BottomNavigationHome(),
             drawer: const HomeDrawer(),
             body: Stack(
               children: [
@@ -42,8 +42,8 @@ class HomeScreen extends StatelessWidget {
                           return Column(
                             children: [
                               if (index == 0) const SoundScrollWidget(),
-                              PostWidgetWithImage(),
-                              PostWidgetWithVideo()
+                             const PostWidgetWithImage(),
+                             const PostWidgetWithVideo()
                             ],
                           );
                         },
