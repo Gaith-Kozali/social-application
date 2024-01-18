@@ -12,7 +12,7 @@ class UserWidget extends StatelessWidget {
       children: [
         CircleAvatar(
           radius: 41.r,
-          backgroundImage: AssetImage("assets/profil.png"),
+          backgroundImage: AssetImage("assets/picture.jpg"),
         ),
         SizedBox(
           width: 22.w,
@@ -20,7 +20,7 @@ class UserWidget extends StatelessWidget {
         Column(
           children: [
             Text(
-              'Shimaa Ahmed',
+              'Gaith kozali',
               style: AppFonts().t20W600,
             ),
             SizedBox(

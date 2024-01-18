@@ -12,7 +12,7 @@ class CustomSliverProfileAppBar extends SliverPersistentHeaderDelegate {
   @override
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {
-    double radius = 50.r;
+    double radius = 60.r;
     final double top = expandedHeight - shrinkOffset - radius / 2;
     return Stack(
       fit: StackFit.expand,
@@ -31,6 +31,7 @@ class CustomSliverProfileAppBar extends SliverPersistentHeaderDelegate {
                       : 1,
               child: CircleAvatar(
                 backgroundColor: Colors.blue,
+                backgroundImage: AssetImage("assets/picture.jpg",),
                 radius: radius,
               )),
         )

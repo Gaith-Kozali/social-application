@@ -31,7 +31,7 @@ class ProfileScreen extends StatelessWidget {
                   children: [
                     if (index == 0)
                       Padding(
-                          padding: EdgeInsets.symmetric(vertical: 20.h),
+                          padding: EdgeInsets.symmetric(vertical: 35.h),
                           child: const PersonalInfoWidget()),
                     if (index == 0)
                       Padding(

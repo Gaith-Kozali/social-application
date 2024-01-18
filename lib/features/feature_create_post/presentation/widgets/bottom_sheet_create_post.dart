@@ -25,12 +25,14 @@ class BottomSheetCreatePost extends StatelessWidget {
                   Icons.photo_outlined,
                 )),
             IconButton(
-                onPressed: () {
-                  GalleryService().openCamera(context);
+                onPressed: () async {
+                  await GalleryService.takeVideo();
                 },
                 icon: const Icon(Icons.videocam_outlined)),
             IconButton(
-                onPressed: () {},
+                onPressed: () {
+
+                },
                 icon: const Icon(Icons.emoji_emotions_outlined)),
             IconButton(onPressed: () {}, icon: const Icon(Icons.more_horiz)),
           ],

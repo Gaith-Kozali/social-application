@@ -36,7 +36,7 @@ class ChooseImageWidget extends StatelessWidget {
                 child: SplashButton(
                     title: "Choose from Camera Roll",
                     func: () {
-                      // Navigator.of(context).pushNamed(AppRoute.galleryRoute)
+                       Navigator.of(context).pushNamed(AppRoute.galleryRoute);
                     })),
             SplashButton(
               title: "Take Photo",

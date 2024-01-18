@@ -17,14 +17,14 @@ class PersonalInfoWidget extends StatelessWidget {
           Column(
             children: [
               Text(
-                'Shimaa Ahmed',
+                'Gaith kozali',
                 style: AppFonts().t20W600,
               ),
               SizedBox(
                 height: 11.h,
               ),
               Text(
-                'Ui / Ux designer',
+                'Flutter and .net in soon',
                 style: AppFonts().t16W500,
               ),
             ],
