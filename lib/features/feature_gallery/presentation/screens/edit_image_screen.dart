@@ -13,6 +13,7 @@ import 'package:socalize_gaith_kozali/route/app_route.dart';
 import '../../../../core/functions/file_cached.dart';
 
 // welcome this project is coded by Gaith kozali start in 2023/1/1
+
 class EditImageScreen extends StatelessWidget {
   EditImageScreen({super.key, required this.image});
   File image;
