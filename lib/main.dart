@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
                 debugShowCheckedModeBanner: false,
                 theme: AppTheme.darkTheme,
                 onGenerateRoute: AppRoute.screenRouteController,
-                home: LoginScreen()),
+                home: const SplashScreen()),
           );
         });
   }

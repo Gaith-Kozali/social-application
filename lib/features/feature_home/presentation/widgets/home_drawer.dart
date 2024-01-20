@@ -75,7 +75,7 @@ class HomeDrawer extends StatelessWidget {
           leading:
               const Icon(Icons.account_circle_outlined, color: Colors.white),
           onTap: () {
-            Navigator.pushNamed(context, AppRoute.profileRoute);
+            Navigator.pushReplacementNamed(context, AppRoute.profileRoute);
             Scaffold.of(context).closeDrawer();
           },
           title: Text(
@@ -94,14 +94,8 @@ class HomeDrawer extends StatelessWidget {
         ListTile(
           leading: const Icon(Icons.settings_outlined, color: Colors.white),
           onTap: () {
-            showModalBottomSheet(
-              backgroundColor: AppColors.backGround,
-              isScrollControlled: true,
-              isDismissible: true,
-              useSafeArea: true,
-              context: context,
-              builder: (context) => SettingScreen(),
-            );
+            AppRoute.buttonSheetNavigator(context, SettingScreen());
+
             Scaffold.of(context).closeDrawer();
           },
           title: Text(

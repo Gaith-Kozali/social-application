@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:socalize_gaith_kozali/core/constants/app_colors.dart';
+import 'package:socalize_gaith_kozali/route/app_route.dart';
 import '../../../../core/constants/app_fonts.dart';
 
 class CustomSliverProfileAppBar extends SliverPersistentHeaderDelegate {
@@ -31,7 +32,9 @@ class CustomSliverProfileAppBar extends SliverPersistentHeaderDelegate {
                       : 1,
               child: CircleAvatar(
                 backgroundColor: Colors.blue,
-                backgroundImage: AssetImage("assets/picture.jpg",),
+                backgroundImage: AssetImage(
+                  "assets/picture.jpg",
+                ),
                 radius: radius,
               )),
         )
@@ -54,7 +57,7 @@ class CustomSliverProfileAppBar extends SliverPersistentHeaderDelegate {
           backgroundColor: AppColors.lightBlack,
           leading: IconButton(
               onPressed: () {
-                Navigator.of(context).pop();
+                Navigator.of(context).pushNamed(AppRoute.homeRoute);
               },
               icon: const Icon(
                 Icons.arrow_back_ios,
