@@ -9,8 +9,8 @@ import 'package:socalize_gaith_kozali/features/feature_setting/presentation/cont
 import '../../../../../core/constants/app_images_path.dart';
 
 class EditPictureWidget extends StatelessWidget {
-  EditPictureWidget({super.key, this.image});
-  File? image;
+  EditPictureWidget({super.key, required this.image});
+  File image;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -18,7 +18,7 @@ class EditPictureWidget extends StatelessWidget {
       child: Center(
         child: Stack(
           children: [
-            CircleAvatar(radius: 70.r, backgroundImage: FileImage(image!)),
+            CircleAvatar(radius: 70.r, backgroundImage: FileImage(image)),
             Positioned(
               bottom: 0,
               right: 0,

@@ -18,94 +18,92 @@ class EditProfileScreen extends StatelessWidget {
   AppDecoration appDecoration = AppDecoration();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SizedBox(
-          height: getFullScreenHeight(context) * 0.9,
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.w).copyWith(top: 30.h),
-            child: SingleChildScrollView(
-                padding: EdgeInsets.only(bottom: 30.h),
-                child: BlocBuilder<EditProfileCubit, EditProfileState>(
-                  builder: (context, state) {
-                    return Stack(alignment: Alignment.topCenter, children: [
-                      Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            CustomEditAppBar(title: "Edit Profile"),
-                            EditPictureWidget(image: image ?? File("")),
-                            Text(
-                              'Profile',
-                              style: AppFonts()
-                                  .t14W400
-                                  .copyWith(color: Color(0xFFA09BA3)),
-                            ),
-                            SizedBox(
-                              height: 5.h,
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  'Name',
-                                  style: AppFonts().t20W600,
-                                ),
-                                SizedBox(
-                                  width: 205.w,
-                                  height: 40,
-                                  child: TextFormField(
-                                      style: AppFonts().t18W500,
-                                      decoration: appDecoration
-                                          .inputDecorationEditPage),
-                                )
-                              ],
-                            ),
-                            SizedBox(
-                              height: 32.h,
-                            ),
-                            Text(
-                              'Bio',
-                              style: AppFonts()
-                                  .t14W400
-                                  .copyWith(color: Color(0xFFA09BA3)),
-                            ),
-                            SizedBox(
-                              height: 5.h,
-                            ),
-                            Padding(
-                                padding: EdgeInsets.only(bottom: 32.h),
-                                child: SizedBox(
-                                  width: 396.w,
-                                  child: TextFormField(
-                                      style: AppFonts().t18W500,
-                                      decoration:
-                                          appDecoration.inputDecorationEditPage,
-                                      maxLines: 2),
-                                )),
-                            Text(
-                              'Social Handles',
-                              style: AppFonts()
-                                  .t14W400
-                                  .copyWith(color: Color(0xFFA09BA3)),
-                            ),
-                            SizedBox(
-                              height: 5.h,
-                            ),
-                            SocialHandlesWidget()
-                          ]),
-                      Visibility(
-                        visible: state is ShowTypeChooseState
-                            ? state.visibleValue
-                            : false,
-                        child: Positioned(
-                          top: 215.h,
-                          child: ChoosePhotoWidget(),
-                        ),
-                      )
-                    ]);
-                  },
-                )),
-          )),
-    );
+    return SizedBox(
+        height: getFullScreenHeight(context) * 0.9,
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16.w).copyWith(top: 30.h),
+          child: SingleChildScrollView(
+              padding: EdgeInsets.only(bottom: 30.h),
+              child: BlocBuilder<EditProfileCubit, EditProfileState>(
+                builder: (context, state) {
+                  return Stack(alignment: Alignment.topCenter, children: [
+                    Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          CustomEditAppBar(title: "Edit Profile"),
+                          EditPictureWidget(image: image ?? File("")),
+                          Text(
+                            'Profile',
+                            style: AppFonts()
+                                .t14W400
+                                .copyWith(color: Color(0xFFA09BA3)),
+                          ),
+                          SizedBox(
+                            height: 5.h,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Name',
+                                style: AppFonts().t20W600,
+                              ),
+                              SizedBox(
+                                width: 205.w,
+                                height: 40,
+                                child: TextFormField(
+                                    style: AppFonts().t18W500,
+                                    decoration:
+                                        appDecoration.inputDecorationEditPage),
+                              )
+                            ],
+                          ),
+                          SizedBox(
+                            height: 32.h,
+                          ),
+                          Text(
+                            'Bio',
+                            style: AppFonts()
+                                .t14W400
+                                .copyWith(color: Color(0xFFA09BA3)),
+                          ),
+                          SizedBox(
+                            height: 5.h,
+                          ),
+                          Padding(
+                              padding: EdgeInsets.only(bottom: 32.h),
+                              child: SizedBox(
+                                width: 396.w,
+                                child: TextFormField(
+                                    style: AppFonts().t18W500,
+                                    decoration:
+                                        appDecoration.inputDecorationEditPage,
+                                    maxLines: 2),
+                              )),
+                          Text(
+                            'Social Handles',
+                            style: AppFonts()
+                                .t14W400
+                                .copyWith(color: Color(0xFFA09BA3)),
+                          ),
+                          SizedBox(
+                            height: 5.h,
+                          ),
+                          SocialHandlesWidget()
+                        ]),
+                    Visibility(
+                      visible: state is ShowTypeChooseState
+                          ? state.visibleValue
+                          : false,
+                      child: Positioned(
+                        top: 215.h,
+                        child: ChoosePhotoWidget(),
+                      ),
+                    )
+                  ]);
+                },
+              )),
+        ));
   }
 }

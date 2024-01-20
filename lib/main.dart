@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:socalize_gaith_kozali/core/constants/app_theme.dart';
+import 'package:socalize_gaith_kozali/features/feature_authentication/presentation/screens/login_screen.dart';
+import 'package:socalize_gaith_kozali/features/feature_create_post/presentation/screens/create_post_screen.dart';
 import 'package:socalize_gaith_kozali/features/feature_gallery/presentation/screens/gallery_screen.dart';
 import 'package:socalize_gaith_kozali/features/feature_home/presentation/screens/home_screen.dart';
 import 'package:socalize_gaith_kozali/features/feature_profile/presentation/screens/profile_screen.dart';
@@ -42,7 +44,7 @@ class MyApp extends StatelessWidget {
                 debugShowCheckedModeBanner: false,
                 theme: AppTheme.darkTheme,
                 onGenerateRoute: AppRoute.screenRouteController,
-                home: SplashScreen()),
+                home: LoginScreen()),
           );
         });
   }

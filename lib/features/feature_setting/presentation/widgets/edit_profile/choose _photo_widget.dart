@@ -25,8 +25,10 @@ class ChoosePhotoWidget extends StatelessWidget {
     ], func: [
       () {
         GalleryService.takePhoto().then((image) {
-          Navigator.of(context)
-              .pushNamed(AppRoute.editProfileRoute, arguments: image);
+          if (image != null) {
+            Navigator.of(context)
+                .pushNamed(AppRoute.editProfileRoute, arguments: image);
+          }
         });
       },
       () => Navigator.pushNamed(context, AppRoute.galleryRoute)

@@ -49,48 +49,45 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
             : const SizedBox(),
         body: SingleChildScrollView(
           padding: EdgeInsets.symmetric(horizontal: 16.h),
-          child: SizedBox(
-            height: getScreenHeight(context),
-            child: Column(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(top: 67.h, bottom: 32.h),
-                  child: const UserWidget(),
-                ),
-                addMedia
-                    ? TextFormField(
-                        controller: ctrlPost,
-                        maxLines: null,
-                        style: AppFonts().t14W500,
-                        decoration: const InputDecoration(
-                          border: InputBorder.none,
-                        ),
-                        onChanged: (value) {
-                          setState(() {
-                            postText = value;
-                          });
-                        },
-                      )
-                    : TextFormField(
-                        controller: ctrlPost,
-                        onChanged: (value) {
-                          setState(() {
-                            postText = value;
-                          });
-                        },
-                        maxLines: 7,
-                        style: AppFonts().t14W500,
-                        decoration: AppDecoration().inputDecorationCreatePost,
+          child: Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(top: 67.h, bottom: 32.h),
+                child: const UserWidget(),
+              ),
+              addMedia
+                  ? TextFormField(
+                      controller: ctrlPost,
+                      maxLines: null,
+                      style: AppFonts().t14W500,
+                      decoration: const InputDecoration(
+                        border: InputBorder.none,
                       ),
-                SizedBox(height: 10.h),
-                addMedia
-                    ? AspectRatio(
-                        aspectRatio: 1.0,
-                        child: VideoWidget(videoPath: "assets/video.mp4"),
-                      )
-                    : const SizedBox(),
-              ],
-            ),
+                      onChanged: (value) {
+                        setState(() {
+                          postText = value;
+                        });
+                      },
+                    )
+                  : TextFormField(
+                      controller: ctrlPost,
+                      onChanged: (value) {
+                        setState(() {
+                          postText = value;
+                        });
+                      },
+                      maxLines: 7,
+                      style: AppFonts().t14W500,
+                      decoration: AppDecoration().inputDecorationCreatePost,
+                    ),
+              SizedBox(height: 10.h),
+              addMedia
+                  ? AspectRatio(
+                      aspectRatio: 1.0,
+                      child: VideoWidget(videoPath: "assets/video.mp4"),
+                    )
+                  : const SizedBox(),
+            ],
           ),
         ),
       ),
