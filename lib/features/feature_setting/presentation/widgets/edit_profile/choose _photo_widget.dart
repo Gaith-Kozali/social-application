@@ -6,6 +6,7 @@ import 'package:socalize_gaith_kozali/core/constants/app_colors.dart';
 import 'package:socalize_gaith_kozali/core/constants/app_fonts.dart';
 import 'package:socalize_gaith_kozali/core/services/gallery_service.dart';
 import 'package:socalize_gaith_kozali/features/feature_gallery/presentation/screens/gallery_screen.dart';
+import 'package:socalize_gaith_kozali/features/feature_setting/presentation/screens/edit_profile_screen.dart';
 import 'package:socalize_gaith_kozali/features/feature_setting/setting.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:socalize_gaith_kozali/route/app_route.dart';
@@ -26,8 +27,11 @@ class ChoosePhotoWidget extends StatelessWidget {
       () {
         GalleryService.takePhoto().then((image) {
           if (image != null) {
-            Navigator.of(context)
-                .pushNamed(AppRoute.editProfileRoute, arguments: image);
+            AppRoute.buttonSheetNavigator(
+                context,
+                EditProfileScreen(
+                  image: image,
+                ));
           }
         });
       },

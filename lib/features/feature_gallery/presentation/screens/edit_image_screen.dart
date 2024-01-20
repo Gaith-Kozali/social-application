@@ -8,6 +8,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:socalize_gaith_kozali/core/constants/app_colors.dart';
 import 'package:socalize_gaith_kozali/core/constants/app_fonts.dart';
 import 'package:socalize_gaith_kozali/core/constants/app_images_path.dart';
+import 'package:socalize_gaith_kozali/features/feature_setting/presentation/screens/edit_profile_screen.dart';
 import 'package:socalize_gaith_kozali/route/app_route.dart';
 import '../../../../core/functions/file_cached.dart';
 
@@ -80,11 +81,16 @@ class EditImageScreen extends StatelessWidget {
                     MemoryImage? data = await controller.onCropImage();
                     Uint8List bytes = data!.bytes;
                     File tempFile = await saveImageToTempFile(bytes);
-                    Navigator.pushNamed(
-                      context,
-                      AppRoute.editProfileRoute,
-                      arguments: tempFile,
-                    );
+                    // Navigator.pushNamed(
+                    //   context,
+                    //   AppRoute.editProfileRoute,
+                    //   arguments: tempFile,
+                    // );
+                    AppRoute.buttonSheetNavigator(
+                        context,
+                        EditProfileScreen(
+                          image: tempFile,
+                        ));
                     print(data);
                   },
                   child: Text(
